@@ -19,7 +19,7 @@
   z-index: 1000;
   min-width: 1000px;
   backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.0) !important;
+  background: black;
   padding: 20rem 2rem;
 }
 
