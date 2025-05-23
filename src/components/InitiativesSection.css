@@ -1,0 +1,348 @@
+/* InitiativesSection.css */
+.initiatives-section {
+  background-color: #000000;
+  padding: 6rem 0;
+  overflow: hidden;
+  color: white;
+  position: relative;
+  perspective: 1000px;
+}
+
+.initiatives-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000000 100%);
+  z-index: 0;
+}
+
+.section-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 4rem;
+  text-align: center;
+  color: white;
+}
+
+.initiatives-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.initiative-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+}
+
+.initiative-item::after {
+  content: '';
+  position: absolute;
+  bottom: -3rem;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+}
+
+.initiative-item:last-child::after {
+  display: none;
+}
+
+.initiative-item.right-text {
+  grid-template-columns: 1fr 1fr;
+}
+
+.initiative-item.left-text {
+  grid-template-columns: 1fr 1fr;
+  direction: rtl;
+}
+
+.initiative-item.left-text .initiative-content {
+  direction: ltr;
+}
+
+.initiative-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  aspect-ratio: 16/9;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.initiative-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.initiative-item:hover .initiative-image::after {
+  opacity: 1;
+}
+
+.initiative-image img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.initiative-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.initiative-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.7),
+    transparent 70%
+  );
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+.initiative-image .image-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.4s ease;
+  mix-blend-mode: overlay;
+}
+
+.initiative-item:hover .initiative-image .image-overlay {
+  opacity: 1;
+}
+
+.initiative-content {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform: translateY(-20px);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.initiative-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.initiative-item:hover .initiative-content::before {
+  transform: translateX(100%);
+}
+
+.initiative-content h3 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.initiative-content p {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+.initiative-link {
+  font-family: 'Space Mono', monospace;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.initiative-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+  color: white;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.initiative-link::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.initiative-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (max-width: 992px) {
+  .initiative-item,
+  .initiative-item.right-text,
+  .initiative-item.left-text {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    direction: ltr;
+  }
+
+  .initiative-content {
+    transform: translateY(0);
+    padding: 1.5rem;
+  }
+
+  .initiative-item {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .initiatives-section {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    margin-bottom: 2rem;
+  }
+
+  .initiatives-grid {
+    gap: 3rem;
+  }
+
+  .initiative-content h3 {
+    font-size: 1rem;
+  }
+
+  .initiative-content p {
+    font-size: 0.9rem;
+  }
+
+  .explore-button {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.explore-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.explore-button {
+  font-family: 'Press Start 2P', monospace;
+  background: #ffffff;
+  color:black;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.explore-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.explore-button:hover::before {
+  transform: translateX(100%);
+}

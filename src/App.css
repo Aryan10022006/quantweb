@@ -1,0 +1,86 @@
+```css
+:root {
+  --navbar-height: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.page-content {
+  min-height: 100vh;
+  padding-top: calc(var(--navbar-height) + 2rem);
+  padding-bottom: 2rem;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Page Transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms, transform 500ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 500ms, transform 500ms;
+}
+
+/* Smooth scrolling for the entire site */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive Text Sizes */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.75rem !important;
+  }
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  p {
+    font-size: 0.95rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem !important;
+  }
+  h2 {
+    font-size: 1.25rem !important;
+  }
+  p {
+    font-size: 0.9rem !important;
+  }
+}
+```
