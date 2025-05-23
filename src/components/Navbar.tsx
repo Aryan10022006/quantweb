@@ -36,7 +36,7 @@ const Navbar = () => {
               <NavLink
                 to={item.path}
                 className={({ isActive }) =>
-                `nav-link px-3 py-1 ${isActive ? 'active-tab' : 'text-white'}`
+                `nav-link px-3 py-1 text-white ${isActive ? 'active-tab' : 'text-white'}`
                 }
                 style={{ fontSize: '0.9rem' }}
               >
