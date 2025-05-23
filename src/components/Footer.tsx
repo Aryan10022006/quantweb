@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="footer">
-      <ParticlesBackground containerId="footer-particles" isDarkTheme={false} />
+      <ParticlesBackground containerId="footer-particles"  />
       <div className="footer-grid">
         <motion.div 
           className="footer-column"
