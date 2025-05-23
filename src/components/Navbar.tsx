@@ -33,7 +33,7 @@ const css = `
   z-index: 1000;
   min-width: 1000px;
   backdrop-filter: blur(10px);
-  background: black;
+  background: #rgba(0, 0, 0, 0.8);
   padding: 20rem 2rem;
 }
 .navbar-logo {
