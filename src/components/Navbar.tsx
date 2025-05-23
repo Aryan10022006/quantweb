@@ -15,7 +15,7 @@ const navItems = [
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-black border-bottom px-4 py-3">
-      <div className="container-fluid">
+      <div className="container-fluid bg-black">
         <img src={logoImage} alt="Logo" className="navbar-logo" />
         <NavLink to="/" className="navbar-brand pixel-font d-flex flex-column">
           <span className="brand-main">Quant Community</span>
