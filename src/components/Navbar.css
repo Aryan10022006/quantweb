@@ -58,7 +58,6 @@
   transition: all 0.3s ease;
   border-radius: 6px;
   position: relative;
-  z-index: 1001;
 }
 
 .nav-link:hover {
@@ -74,6 +73,8 @@
 
 .navbar-nav .nav-link {
   font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9) !important;
+
   transition: all 0.3s ease;
   border-radius: 6px;
 }
