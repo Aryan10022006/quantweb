@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className="container-fluid bg-black">
         <img src={logoImage} alt="Logo" className="navbar-logo" />
         <NavLink to="/" className="navbar-brand pixel-font d-flex flex-column">
-          <span className="brand-main">Quant Community, IITB </span>
+          <span className="brand-main">Quant Community, IITB</span>
         </NavLink>
         <button
           className="navbar-toggler"
