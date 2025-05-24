@@ -54,7 +54,7 @@
 
 .nav-link {
   font-size: 0.9rem;
-  color: #fff !important;
+  color: white;
   transition: all 0.3s ease;
   border-radius: 6px;
   position: relative;
@@ -63,13 +63,13 @@
 
 .nav-link:hover {
   background: rgba(255, 255, 255, 0.1);
-  color: #fff !important;
+  color:white;
 }
 
 .navbar-nav .nav-link.active-tab {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 6px;
-  color: #fff !important;
+  color: white;
 }
 
 .navbar-nav .nav-link {
