@@ -8,6 +8,7 @@ import Contact from './pages/Contact'
 import Sponsors from './pages/Sponsors'
 import PageTransition from './components/PageTransition'
 import LoadingScreen from './components/LoadingScreen'
+import Questions from './pages/Questions'
 import './App.css'
 
 const App = () => {
@@ -89,6 +90,14 @@ const App = () => {
                 <div className="container page-content">
                   <h1>Team Page</h1>
                 </div>
+              </PageTransition>
+            } 
+          />
+          <Route 
+            path="/questions" 
+            element={
+              <PageTransition>
+                <Questions />
               </PageTransition>
             } 
           />

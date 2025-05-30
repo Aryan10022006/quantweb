@@ -62,6 +62,25 @@
   background: rgba(0, 0, 0, 0.05);
 }
 
+.button-success {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button-success:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+.button-success:active {
+  transform: translateY(0);
+}
+
 @media (max-width: 768px) {
   .button {
     padding: 0.8rem 2rem;

@@ -80,3 +80,14 @@ export interface Sponsor {
   logo: string;
   description: string;
 }
+
+export type QuestionContent = { type: 'text' | 'math'; value: string };
+export type Question = {
+  id: string;
+  title: string;
+  category: string;
+  difficulty: number;
+  question: string;
+  hint: string;
+  answer: string;
+};

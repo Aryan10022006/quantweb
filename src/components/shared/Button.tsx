@@ -6,8 +6,10 @@ interface ButtonProps {
   children: React.ReactNode;
   href?: string;
   onClick?: () => void;
-  variant?: 'primary' | 'secondary' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'success';
   className?: string;
+  disabled?: boolean;
+  style?: React.CSSProperties;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -15,7 +17,8 @@ const Button: React.FC<ButtonProps> = ({
   href,
   onClick,
   variant = 'primary',
-  className = ''
+  className = '',
+  disabled = false
 }) => {
   const baseProps = {
     className: `button button-${variant} ${className}`,
@@ -33,7 +36,7 @@ const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <motion.button onClick={onClick} {...baseProps}>
+    <motion.button onClick={onClick} {...baseProps} disabled={disabled}>
       {children}
     </motion.button>
   );
