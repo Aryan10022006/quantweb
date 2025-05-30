@@ -1,29 +1,56 @@
 [
   {
     "id": "1",
-    "title": "Integration Problem",
+    "title": "Advanced Integration Challenge",
     "category": "Calculus",
     "difficulty": 3,
-    "question": "Evaluate the definite integral $\\int_0^1 x^2 dx$. Show your work and explain the steps involved in solving this integral.",
-    "hint": "Remember that $\\int x^n dx = \\frac{x^{n+1}}{n+1} + C$ for $n \\neq -1$",
-    "answer": "$$\\int_0^1 x^2 dx = \\left[\\frac{x^3}{3}\\right]_0^1 = \\frac{1^3}{3} - \\frac{0^3}{3} = \\frac{1}{3}$$"
+    "question": "Evaluate the definite integral $\\int_0^{\\pi/2} \\frac{\\sin(x)}{\\sin(x) + \\cos(x)} dx$. Show your work and explain the steps, including any substitutions or identities used.",
+    "hint": "Consider the substitution $u = \\tan(x/2)$, known as the Weierstrass substitution, to simplify the integrand.",
+    "answer": "Using the Weierstrass substitution $u = \\tan(x/2)$, we transform the integral into a rational function, which evaluates to $\\frac{\\pi}{4}$ after careful computation."
   },
   {
     "id": "2",
-    "title": "Derivative Problem",
+    "title": "Challenging Derivative Problem",
     "category": "Calculus",
-    "difficulty": 2,
-    "question": "Find the derivative of the function $f(x) = \\sin(x)$. Explain why the derivative of sine is cosine using the limit definition.",
-    "hint": "Use the limit definition of derivative: $f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}$",
-    "answer": "The derivative of $f(x) = \\sin(x)$ is $f'(x) = \\cos(x)$. This can be proven using the limit definition of derivative and trigonometric identities."
+    "difficulty": 3,
+    "question": "Find the derivative of $f(x) = \\sin^{-1}(x^2)$ with respect to $x$. Then, evaluate the derivative at $x = \\frac{1}{\\sqrt{2}}$. Explain your steps, including the use of the chain rule.",
+    "hint": "Use the chain rule and the derivative of the inverse sine function: $\\frac{d}{dx} \\sin^{-1}(u) = \\frac{1}{\\sqrt{1-u^2}} \\cdot \\frac{du}{dx}$.",
+    "answer": "The derivative is $f'(x) = \\frac{2x}{\\sqrt{1-(x^2)^2}}$. At $x = \\frac{1}{\\sqrt{2}}$, this evaluates to $f'\\left(\\frac{1}{\\sqrt{2}}\\right) = \\frac{2 \\cdot \\frac{1}{\\sqrt{2}}}{\\sqrt{1-\\left(\\frac{1}{\\sqrt{2}}\\right)^4}} = 2$."
   },
   {
     "id": "3",
-    "title": "Limit Problem",
+    "title": "Tricky Limit with Indeterminate Form",
     "category": "Calculus",
-    "difficulty": 4,
-    "question": "Evaluate the limit $\\lim_{x \\to 0} \\frac{\\sin(x)}{x}$. This is a fundamental limit in calculus. Explain why this limit is important and how it relates to the derivative of sine.",
-    "hint": "Consider using the Squeeze Theorem or Taylor series expansion of $\\sin(x)$.",
-    "answer": "$\\lim_{x \\to 0} \\frac{\\sin(x)}{x} = 1$. This limit is crucial because it helps us find the derivative of sine and is used in many other trigonometric limits."
+    "difficulty": 3,
+    "question": "Evaluate the limit $\\lim_{x \\to 0} \\frac{x - \\sin(x)}{x^3}$. Explain why this is an indeterminate form and use an appropriate method to solve it.",
+    "hint": "This is a $0/0$ indeterminate form. Consider using L'Hôpital's Rule or the Taylor series expansion of $\\sin(x)$.",
+    "answer": "Using the Taylor series for $\\sin(x) \\approx x - \\frac{x^3}{6}$, the limit becomes $\\lim_{x \\to 0} \\frac{x - (x - \\frac{x^3}{6})}{x^3} = \\frac{1}{6}$. Alternatively, L'Hôpital's Rule applied three times yields the same result."
+  },
+  {
+    "id": "4",
+    "title": "Chameleon Color Puzzle",
+    "category": "Reasoning",
+    "difficulty": 3,
+    "question": "There are 10 chameleons: 4 red, 3 blue, and 3 green. When two chameleons of different colors meet, they both change to the third color (e.g., a red and a blue chameleon both become green). Can you make all chameleons the same color through a series of meetings? Explain your reasoning.",
+    "hint": "Consider the parity of the number of chameleons of each color and how it changes with each meeting.",
+    "answer": "No, it’s impossible. Each meeting changes the counts of two colors by -1 and the third by +2, preserving the parity of the counts modulo 3. Initially, the counts (4, 3, 3) are (1, 0, 0) mod 3, but to have all chameleons the same color (e.g., 10 red), the counts must be (10, 0, 0), which is (1, 0, 0) mod 3 for red but requires adjusting other parities, which is not possible."
+  },
+  {
+    "id": "5",
+    "title": "Risky Coins: To Bet or Not to Bet?",
+    "category": "Probability",
+    "difficulty": 3,
+    "question": "You have 3 coins: one is fair (heads/tails with probability 1/2), one is biased (heads with probability 2/3), and one is two-headed. You pick a coin at random and flip it 3 times, getting heads each time. What is the probability that you picked the two-headed coin? Show your work using Bayes’ theorem.",
+    "hint": "Use Bayes’ theorem: $P(A|B) = \\frac{P(B|A)P(A)}{P(B)}$, where $A$ is picking the two-headed coin, and $B$ is getting 3 heads.",
+    "answer": "Using Bayes’ theorem, the probability is $\\frac{P(\\text{3 heads | two-headed})P(\\text{two-headed})}{P(\\text{3 heads})} = \\frac{1 \\cdot \\frac{1}{3}}{1 \\cdot \\frac{1}{3} + \\left(\\frac{2}{3}\\right)^3 \\cdot \\frac{1}{3} + \\left(\\frac{1}{2}\\right)^3 \\cdot \\frac{1}{3}} = \\frac{\\frac{1}{3}}{\\frac{1}{3} + \\frac{8}{81} + \\frac{1}{24}} = \\frac{36}{53}$."
+  },
+  {
+    "id": "6",
+    "title": "The Mysterious Boxes Puzzle",
+    "category": "Probability",
+    "difficulty": 3,
+    "question": "There are 3 boxes: one contains two gold coins, one contains two silver coins, and one contains one gold and one silver coin. You pick a box at random and draw a coin, which is gold. What is the probability that the other coin in the same box is also gold? Explain using conditional probability.",
+    "hint": "Consider the conditional probability of picking the box with two gold coins given that the first coin drawn is gold.",
+    "answer": "The probability is $\\frac{2}{3}$. There are 6 coins total (3 gold, 3 silver). Drawing a gold coin means you picked either the gold-gold box (2 gold coins) or the gold-silver box (1 gold coin). The probability of having picked the gold-gold box given a gold coin is drawn is $\\frac{2/6}{2/6 + 1/6} = \\frac{2}{3}$."
   }
-] 
+]

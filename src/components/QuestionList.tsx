@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import type { Question } from '../types';
-import { FaStar, FaRegStar, FaChevronRight, FaLock } from 'react-icons/fa';
+import { FaStar, FaRegStar, FaChevronRight } from 'react-icons/fa';
+import './QuestionList.css';
 
 interface QuestionListProps {
   questions: Question[];
@@ -20,7 +21,7 @@ const QuestionList: FC<QuestionListProps> = ({ questions, onSelect }) => {
   };
 
   return (
-    <div className="table-responsive">
+    <div className="table-responsive question-list-responsive">
       <table className="table align-middle table-hover bg-white rounded shadow-sm">
         <thead className="table-light">
           <tr>
@@ -39,7 +40,7 @@ const QuestionList: FC<QuestionListProps> = ({ questions, onSelect }) => {
               key={q.id}
               style={{ cursor: 'pointer' }}
               onClick={() => onSelect(q)}
-              className="align-middle"
+              className="align-middle question-row"
             >
               <td style={{ fontWeight: 500 }}>
                 {/* Optional lock icon: <FaLock className="me-2 text-danger" /> */}

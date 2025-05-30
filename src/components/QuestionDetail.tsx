@@ -8,6 +8,7 @@ import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaStar, FaRegStar } from 'react-icons/fa';
+import './QuestionDetail.css';
 
 interface QuestionDetailProps {
   question: Question;
@@ -45,7 +46,7 @@ const QuestionDetail: FC<QuestionDetailProps> = ({ question, onBack }) => {
   };
 
   return (
-    <div className="card shadow-lg p-4" style={{ maxWidth: 800, margin: '0 auto' }}>
+    <div className="card shadow-lg p-4 question-detail-responsive" style={{ maxWidth: 800, margin: '0 auto' }}>
       <div className="d-flex justify-content-between align-items-center mb-4">
         <Button 
           variant="ghost" 
@@ -68,7 +69,7 @@ const QuestionDetail: FC<QuestionDetailProps> = ({ question, onBack }) => {
         <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>{question.question}</ReactMarkdown>
       </div>
 
-      <div className="d-flex gap-3 mb-4 flex-wrap">
+      <div className="d-flex gap-3 mb-4 flex-wrap question-detail-btns-responsive">
         <Button 
           variant={show === 'hint' ? 'primary' : 'secondary'}
           onClick={() => setShow(show === 'hint' ? 'none' : 'hint')}
