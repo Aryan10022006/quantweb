@@ -9,6 +9,8 @@ import Sponsors from './pages/Sponsors'
 import PageTransition from './components/PageTransition'
 import LoadingScreen from './components/LoadingScreen'
 import Questions from './pages/Questions'
+import Test from './pages/Test'
+import TestList from './pages/TestList'
 import './App.css'
 
 const App = () => {
@@ -98,6 +100,30 @@ const App = () => {
             element={
               <PageTransition>
                 <Questions />
+              </PageTransition>
+            } 
+          />
+          <Route 
+            path="/questions/test" 
+            element={
+              <PageTransition>
+                <Test />
+              </PageTransition>
+            } 
+          />
+          <Route 
+            path="/questions/tests" 
+            element={
+              <PageTransition>
+                <TestList />
+              </PageTransition>
+            } 
+          />
+          <Route 
+            path="/questions/test/:id" 
+            element={
+              <PageTransition>
+                <Test />
               </PageTransition>
             } 
           />
