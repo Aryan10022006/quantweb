@@ -148,3 +148,125 @@
   transition: all 0.3s ease-in-out;
   z-index: 1000;
 }
+
+/* Additions for pure React responsive Navbar */
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.navbar-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+.hamburger-bar {
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  margin: 3px 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.navbar-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-more:hover .nav-dropdown,
+.nav-more:focus-within .nav-dropdown {
+  display: block;
+}
+
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #222;
+  min-width: 160px;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.12);
+  z-index: 1200;
+}
+.nav-dropdown li {
+  width: 100%;
+}
+.nav-dropdown .nav-link {
+  display: block;
+  width: 100%;
+  padding: 0.7rem 1.2rem;
+  color: #fff;
+  background: none;
+  border-radius: 0.5rem;
+  text-align: left;
+}
+.nav-dropdown .nav-link:hover {
+  background: #333;
+}
+
+@media (min-width: 992px) {
+  .navbar-hamburger {
+    display: none !important;
+  }
+  .navbar-nav-list {
+    display: flex !important;
+    position: static !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    width: auto !important;
+  }
+  .nav-item {
+    width: auto;
+    margin: 0 0.5rem;
+  }
+  .nav-link {
+    width: auto;
+    text-align: left;
+    padding: 0.7rem 1.1rem;
+    font-size: 1rem;
+  }
+  .nav-more {
+    width: auto;
+  }
+  .nav-dropdown {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 160px;
+    background: #222;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.12);
+    margin-top: 0.2rem;
+    width: max-content;
+    display: none;
+  }
+  .nav-more:hover .nav-dropdown,
+  .nav-more:focus-within .nav-dropdown {
+    display: block;
+  }
+}

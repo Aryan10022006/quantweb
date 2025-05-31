@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const TestList = () => {
   const navigate = useNavigate();
   return (
-    <div className="container mx-auto max-w-3xl py-8 px-2">
+    <div className="container mx-auto max-w-3xl py-8 px-2" style={{paddingTop: '80px'}}>
       <h1 className="text-3xl font-bold font-mono text-black mb-8 text-center">Available Tests</h1>
       <div className="flex flex-col gap-6">
         {MOCK_TESTS.map(test => (

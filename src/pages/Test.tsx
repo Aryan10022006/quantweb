@@ -81,7 +81,7 @@ const Test = () => {
   const q = questions[current];
 
   return (
-    <div className="test-container">
+    <div className="test-container" style={{paddingTop: '80px'}}>
       <div className={`test-card${feedback === 'correct' ? ' ring-4 ring-green-600' : feedback === 'incorrect' ? ' ring-4 ring-red-600' : ''}`.trim()}>
         <div className="test-header">
           <span className="font-semibold">{test.name} — Question {current + 1} / {questions.length}</span>

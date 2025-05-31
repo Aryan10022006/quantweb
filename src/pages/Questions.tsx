@@ -34,7 +34,7 @@ const Questions = () => {
 
   return (
     <PageTransition>
-      <div className="container mx-auto max-w-4xl py-6 px-2">
+      <div className="container mx-auto max-w-4xl py-6 px-2" style={{paddingTop: '80px'}}>
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4">
           <h1 className="text-3xl font-bold font-mono text-gray-900">Practice Questions</h1>
           <button
@@ -72,7 +72,11 @@ const Questions = () => {
         </div>
         {loading && <div className="text-center text-gray-500 py-8">Loading...</div>}
         {!loading && !selected && <QuestionList questions={filtered} onSelect={setSelected} />}
-        {!loading && selected && <QuestionDetail question={selected} onBack={() => setSelected(null)} />}
+        {!loading && selected && (
+          <div style={{paddingTop: '80px'}}>
+            <QuestionDetail question={selected} onBack={() => setSelected(null)} />
+          </div>
+        )}
       </div>
     </PageTransition>
   );
